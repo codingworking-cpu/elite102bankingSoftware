@@ -29,3 +29,27 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def check_balance():
+  connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+def deposit_funds():
+  connection = sqlite3.connect('.db')
+    cursor = connection.cursor()
+
+def wihdraw_funds():
+  connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+def create_account():
+  connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+def delete_account():
+  connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
+
+def modify_account():
+  connection = sqlite3.connect('example.db')
+    cursor = connection.cursor()
