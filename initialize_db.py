@@ -2,6 +2,12 @@ import sqlite3
 
 DB_NAME = 'example.db'
 
+ADD_FUNDS = 'deposit.db'
+
+TAKE_FUNDS = 'wihdraw.db'
+
+ACCOUNT_INFO = 'accounts.db'
+
 
 def initialize_database():
     connection = sqlite3.connect(DB_NAME)
@@ -35,5 +41,12 @@ def initialize_database():
     connection.commit()
     connection.close()
 
+
+   connection = sqlite3.connect(ADD_FUNDS)
+    print("Connected to the database.")
+    cursor = connection.cursor()
+    print("Cursor created.")
+    # Create a sample table
+    print("Creating table if it does not exist...")
 
 initialize_database()
