@@ -2,9 +2,7 @@ import sqlite3
 
 DB_NAME = 'example.db'
 
-ADD_FUNDS = 'deposit.db'
-
-TAKE_FUNDS = 'wihdraw.db'
+MANAGE_FUNDS = 'balance.db'
 
 ACCOUNT_INFO = 'accounts.db'
 
@@ -42,11 +40,59 @@ def initialize_database():
     connection.close()
 
 
-   connection = sqlite3.connect(ADD_FUNDS)
+   connection = sqlite3.connect(MANAGE_FUNDS)
     print("Connected to the database.")
     cursor = connection.cursor()
     print("Cursor created.")
     # Create a sample table
     print("Creating table if it does not exist...")
+
+     cursor.execute('''
+        CREATE TABLE IF NOT EXISTS students
+            (transaction type,
+            previous balance, 
+            current balance)
+            
+    ''')
+ # Insert sample data
+    print("Inserting sample data...")
+    cursor.execute('''
+        INSERT INTO funds (transaction type, previous balance, current balance) VALUES
+        ('deposit', 1000. 1100),
+    ''')
+    print("Sample data inserted.")
+    # Commit the changes and close the connection
+    print("Committing changes and closing the connection...")
+    connection.commit()
+    connection.close()
+    print("Table created.")
+
+    
+   connection = sqlite3.connect(ACCOUNT_INFO)
+    print("Connected to the database.")
+    cursor = connection.cursor()
+    print("Cursor created.")
+    # Create a sample table
+    print("Creating table if it does not exist...")
+
+     cursor.execute('''
+        CREATE TABLE IF NOT EXISTS students
+            (username,
+            password)
+            
+    ''')
+ # Insert sample data
+    print("Inserting sample data...")
+    cursor.execute('''
+        INSERT INTO accounts (username, password) VALUES
+        (admin, admin)
+    ''')
+    print("Sample data inserted.")
+    # Commit the changes and close the connection
+    print("Committing changes and closing the connection...")
+    connection.commit()
+    connection.close()
+    print("Table created.")
+
 
 initialize_database()

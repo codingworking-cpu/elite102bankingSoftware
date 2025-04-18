@@ -35,21 +35,21 @@ def check_balance():
     cursor = connection.cursor()
 
 def deposit_funds():
-  connection = sqlite3.connect('.db')
+  connection = sqlite3.connect('balance.db')
     cursor = connection.cursor()
 
 def wihdraw_funds():
-  connection = sqlite3.connect('example.db')
+  connection = sqlite3.connect('balance.db')
     cursor = connection.cursor()
 
 def create_account():
-  connection = sqlite3.connect('example.db')
+  connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
 
 def delete_account():
-  connection = sqlite3.connect('example.db')
+  connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
 
 def modify_account():
-  connection = sqlite3.connect('example.db')
+  connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
