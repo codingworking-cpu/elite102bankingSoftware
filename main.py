@@ -27,8 +27,6 @@ def main():
     connection.close()
 
 
-if __name__ == "__main__":
-    main()
 
 def check_balance():
   connection = sqlite3.connect('example.db')
@@ -46,6 +44,11 @@ def create_account():
   connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
 
+     username = input("create a username:")
+     password = input("create a password")
+
+     cursor.execute("INSERT INTO accounts (username, password) VALUES(?,?)",(username,password))
+     connection.commit()
 def delete_account():
   connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
@@ -53,3 +56,13 @@ def delete_account():
 def modify_account():
   connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
+    
+    username = input("create a username:")
+    password = input("create a password")
+
+   
+                                                    
+
+
+if __name__ == "__main__":
+    main()

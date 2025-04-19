@@ -48,7 +48,7 @@ def initialize_database():
     print("Creating table if it does not exist...")
 
      cursor.execute('''
-        CREATE TABLE IF NOT EXISTS students
+        CREATE TABLE IF NOT EXISTS funds
             (transaction type,
             previous balance, 
             current balance)
@@ -76,7 +76,7 @@ def initialize_database():
     print("Creating table if it does not exist...")
 
      cursor.execute('''
-        CREATE TABLE IF NOT EXISTS students
+        CREATE TABLE IF NOT EXISTS accounts
             (username,
             password)
             
