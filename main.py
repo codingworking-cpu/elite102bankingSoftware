@@ -30,35 +30,45 @@ def main():
 
 def check_balance():
   connection = sqlite3.connect('example.db')
-    cursor = connection.cursor()
+  cursor = connection.cursor()
 
 def deposit_funds():
   connection = sqlite3.connect('balance.db')
-    cursor = connection.cursor()
+  cursor = connection.cursor()
 
 def wihdraw_funds():
   connection = sqlite3.connect('balance.db')
-    cursor = connection.cursor()
+  cursor = connection.cursor()
 
 def create_account():
   connection = sqlite3.connect('accounts.db')
-    cursor = connection.cursor()
+  cursor = connection.cursor()
 
      username = input("create a username:")
      password = input("create a password")
 
      cursor.execute("INSERT INTO accounts (username, password) VALUES(?,?)",(username,password))
      connection.commit()
+     print("account sucessfully created")
 def delete_account():
   connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
 
-def modify_account():
+    username = input("input your username")
+    password = ("confirm password")
+
+    curson.execute("DELETE FROM accounts WHERE ")
+
+def modify_password():
   connection = sqlite3.connect('accounts.db')
     cursor = connection.cursor()
     
-    username = input("create a username:")
+    username = input("input old username")
     password = input("create a password")
+
+    cursor.execute(f"UPDATE accounts {username} SET password {password}")
+
+    print("password sucessfully changed")
 
    
                                                     
