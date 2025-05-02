@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
-
+import os
 app = Flask(__name__)
 
 app.config["SESSION_PERMANENT"] = False
@@ -21,3 +21,6 @@ def clear_session():
     # Clear the session
     session.clear()
     return jsonify({'status': 'session cleared'})
+
+if __name__ == 'main':
+     app.run(host='192.168.1.160', port=8080, debug=True)
