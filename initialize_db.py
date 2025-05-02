@@ -39,17 +39,17 @@ def initialize_database():
     connection.commit()
     connection.close()
 
-
-   connection = sqlite3.connect(MANAGE_FUNDS)
+#editing sample code to create new tables
+    connection = sqlite3.connect(MANAGE_FUNDS)
     print("Connected to the database.")
     cursor = connection.cursor()
     print("Cursor created.")
     # Create a sample table
     print("Creating table if it does not exist...")
 
-     cursor.execute('''
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS funds
-            (transaction type,
+            (operation,
             previous balance, 
             current balance)
             
@@ -57,7 +57,7 @@ def initialize_database():
  # Insert sample data
     print("Inserting sample data...")
     cursor.execute('''
-        INSERT INTO funds (transaction type, previous balance, current balance) VALUES
+        INSERT INTO funds (operation, previous balance, current balance) VALUES
         ('deposit', 1000. 1100),
     ''')
     print("Sample data inserted.")
@@ -68,14 +68,14 @@ def initialize_database():
     print("Table created.")
 
     
-   connection = sqlite3.connect(ACCOUNT_INFO)
+    connection = sqlite3.connect(ACCOUNT_INFO)
     print("Connected to the database.")
     cursor = connection.cursor()
     print("Cursor created.")
     # Create a sample table
     print("Creating table if it does not exist...")
 
-     cursor.execute('''
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS accounts
             (username,
             password)
@@ -92,7 +92,7 @@ def initialize_database():
     print("Committing changes and closing the connection...")
     connection.commit()
     connection.close()
-    print("Table created.")
+    print("Table created.") 
 
 
 initialize_database()
